@@ -1,0 +1,96 @@
+1. 메서드
+//클래스 (main클래스명은 java 파일 명이랑 똑같아야함)
+//public : 접근제어자
+public class Main {
+
+    //JDK 역할: 컴파일러(.java->.class) / 실행환경 JRE / JDB: 디버깅
+
+    // main 메소드
+    // 자바 프로젝트(앱)는 제일 먼저 main 메소드를 실행시킨다.
+    // static: 이 프로그램이 시작될 때 무조건 실행되는 녀석
+    // void: 매서드의 출력값의 데이터 타입 ("아무것도 없다" -> 출력없는상태)
+    // String[] args : 매개변수 자리
+    public static void main(String[] args) {
+        //객체 : 특징(속성, 변수), 행동(메서드) -> out이 객체이고, println이 메서드
+        System.out.println("Hello world!");
+    }
+}
+
+2. 래퍼 클래스
+import java.util.Arrays;
+
+public class Main {
+
+    public static void main(String[] args){
+        // 배열
+        int[] a = {1,2,3};
+        System.out.println(Arrays.toString(a)); //이렇게 써야 주소값이 아닌, 배열 a값이 출력됨.
+
+        // 래퍼 클래스
+        int number = 21;
+        Integer num = number; //기본형 변수를 래퍼타입으로 박싱.(Integer에서 제공하는 기능 사용)
+        System.out.println(num.intValue()); // unboxing
+
+    }
+
+}
+
+3. 형 변환 하기
+// 숫자 -> 문자
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int asciiNumber = sc.nextInt();
+		char ch = (char)asciiNumber; // 문자로 형변환을 해주면 숫자에 맞는 문자로 표현됩니다.
+		System.out.println(ch);
+	}
+}
+
+// ========결과==========
+// 입력
+97
+// 출력
+a
+
+// 문자 -> 숫자
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		char letter = sc.nextLine().charAt(0); // 첫번째 글자만 받아오기위해 charAt(0) 메서드를 사용합니다.
+		int asciiNumber = (int)letter; // 숫자로 형변환을 해주면 저장되어있던 아스키 숫자값으로 표현됩니다.
+		System.out.println(asciiNumber);
+	}
+}
+
+// =========결과==========
+// 입력
+a
+// 출력
+97
+
+4. 변수 타입별 크기 순서 (byte(1) → short(2) → int(4) → long(8) → float(4) → double(8))
+public  class Main {
+
+    public static void main(String[] args){
+        // 변수타입별 크기 순서
+        // byte(1) -> short(2) -> int(4) -> long(8) -> float(4) -> double(8)
+
+        byte byteNumber = 10;
+        int intNumber = byteNumber; // byte -> int 형변환
+        System.out.println(intNumber); // 10
+
+        char charAlphabet = 'A';
+        intNumber = charAlphabet; // char -> int 형변환
+        System.out.println(intNumber); // A의 유니코드 : 65
+
+        intNumber = 100;
+        long longNumber = intNumber; // int -> number 형변환
+        System.out.println(longNumber); // 100s
+
+        intNumber = 200;
+        double doubleNumber = intNumber; // int -> double 형변환
+        System.out.println(doubleNumber); // 200.0 (소수점이 추가된 실수출력)
+
+}
