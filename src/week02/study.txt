@@ -1,0 +1,18 @@
+1. 삼항 연산자
+- 조건 ? 참결과 : 거짓결과
+-String s = (x != y) ? "정답" : "땡 ";
+ System.out.println(s); // 땡
+
+ 2. 연산자 우선순위
+산술 > 비교 > 논리 > 대입
+
+3. 배열
+- 형태 : int[] intArray; & int intArray[];
+
+4. 컬렉션
+- List, Set, Queue, Map
+- List (순서O, 중복O)
+- Stack (LIFO) - 한쪽만 뚫려있는 구조
+- Queue (FIFO) - 양쪽으로 뚫려있는 구조
+- Set (순서X, 중복X)
+- Map (key-value로 이루어진 형태)
