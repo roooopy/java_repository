@@ -1,0 +1,26 @@
+1. 접근제어자 종류
+- public : 접근 제한 x
+- protected : 같은 패키지 내에서, 다른 패키지의 자손 클래스에서 접근이 가능
+- default : 같은 패키지 내에서만 접근이 가능
+- private : 같은 클래스 내에서만 접근이 가능
+
+2. getter & setter
+(1) getter: 외부에서 객체의 private 한 필드를 읽을 필요가 있을 때 Getter 메서드를 사용
+<예시>
+public String getModel() {
+    return model;
+}
+
+public String getColor() {
+    return color;
+}
+
+(2) setter: 외부에서 객체의 private 한 필드를 저장/수정할 필요가 있을 때 Setter 메서드를 사용
+<예시>
+public void setModel(String model) {
+    this.model = model;
+}
+
+public void setColor(String color) {
+    this.color = color;
+}
